@@ -56,10 +56,20 @@ navItems.forEach(item =>{
     textContentAll.forEach(item =>{
         item.addEventListener("contextmenu", e =>{
             item.style.color = "red";
+            
         })  
     });
 
-
+    const pAll = document.querySelectorAll("p");
+    // pAll.classList.add(".btn");
+    pAll.forEach(item =>{
+        item.addEventListener("mousemove", e => {
+            item.textContent = "REDACTED";
+            item.style.background = "black";
+            item.style.color = "white";
+            e.stopPropagation();
+        })
+    });
     const destiTxt = document.querySelectorAll(".btn");
 
     destiTxt.forEach(item =>{
@@ -67,8 +77,12 @@ navItems.forEach(item =>{
             item.textContent = "REDACTED";
             item.style.background = "black";
             item.style.color = "white";
+            
         })
     });
+console.log(pAll)
+ 
+
     
 
  
